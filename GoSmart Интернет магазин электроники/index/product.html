@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/product.css">
+    <title>{{.Name}}</title> <!-- Используем имя товара в заголовке -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img id="logo" src="../assets/photo/Логотип GoSmart.png" alt="Логотип"> <!--200x200 px-->
+            <ul class="but">
+                <li><a href="/">Товары</a></li>
+                <li><a href="/about">О нас</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="products" class="Otstup">
+            <div class="product">
+                <img src="/{{.ImageURL}}" alt="{{.Name}}">
+                <!--<img src="../assets/photo/kartinkainvenarizacija-200x200.jpg">-->
+            </div>
+
+            <div id="OpisAn"  class="nameProduct">
+                <br>
+                <h1 id="OpisAn">{{.Name}}</h1> <!-- Динамическое название товара -->
+                <p id="OpisAnNie">{{.Description}}</p> <!-- Динамическое описание товара -->
+                <p id="Opis">Характеристики:<hr></p>
+                <p class="Opis">Процессор: {{.Processor}}</p>
+                <p class="Opis">Оперативная память: {{.RAM}}</p>
+                <p class="Opis">Накопитель: {{.Drive}}</p>
+                <p class="Opis">Дисплей: {{.Display}}</p>
+
+                <button onclick="window.location.href='/order/product/{{ .ID }}';">Купить</button>
+
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>2024 Интернет Магазин. Все права защищены.</p> 
+    </footer>
+
+</body> 
+</html> 

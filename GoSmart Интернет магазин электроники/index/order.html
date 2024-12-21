@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заказа</title>
+</head>
+<body>
+    <h1>Заказ товара: {{ .ProductName }}</h1>
+    <form action="/order" method="POST">
+        <input type="hidden" name="product_name" value="{{ .ProductName }}">
+        
+        <label for="first_name">Имя:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="last_name">Фамилия:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="middle_name">Отчество:</label>
+        <input type="text" id="middle_name" name="middle_name"><br>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,15}"><br>
+
+        <label for="quantity">Количество:</label>
+        <input type="number" id="quantity" name="quantity" required min="1"><br>
+
+        <label for="region">Область:</label>
+        <input type="text" id="region" name="region" required><br>
+
+        <label for="city">Город:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="street">Улица:</label>
+        <input type="text" id="street" name="street" required><br>
+
+        <label for="house">Дом:</label> 
+        <input type="text" id="house" name="house" required><br>
+
+        <label for="apartment">Квартира:</label>
+        <input type="text" id="apartment" name="apartment"><br>
+
+        <button type="submit">Оформить заказ</button>
+    </form>
+</body>
+</html>

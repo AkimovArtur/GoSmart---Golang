@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление товарами</title>
+    <link rel="stylesheet" href="../assets/admin.css"> <!-- Подключите свой CSS файл -->
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Админка</h1>
+            <ul>
+                <li><a href="/">Товары</a></li>
+                <li><a href="/logout">Выход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Добавить новый товар</h2>
+        <form action="/admin/add-product" method="post" enctype="multipart/form-data">
+            <label for="name">Название:</label>
+            <input type="text" id="name" name="name" required><br>
+        
+            <label for="description">Описание:</label>
+            <textarea id="description" name="description" required></textarea><br>
+        
+            <label for="price">Цена:</label>
+            <input type="number" id="price" name="price" step="0.01" required> <!-- Поле для цены --><br>
+        
+            <label for="image">Изображение:</label>
+            <input type="file" id="image" name="image" accept="image/*" required><br>
+
+            <label for="processor">Процессор:</label>
+            <input type="text" id="processor" name="processor"><br>
+
+            <label for="ram">Оперативная память:</label>
+            <input type="text" id="ram" name="ram"><br>
+
+            <label for="drive">Накопитель:</label>
+            <input type="text" id="drive" name="drive"><br>
+
+            <label for="display">Дисплей:</label>
+            <input type="text" id="display" name="display"><br>
+
+            <button type="submit">Добавить товар</button>
+        
+        </form>
+
+        <h2>Существующие товары</h2>
+        <section id="existing-products">
+            {{ range .Products }}
+            <div class="product">
+                <h3>{{ .Name }}</h3>
+                <img src="{{ .ImageURL }}" alt="{{ .Name }}" style="width: 100px; height: auto;"> <!-- Изображение товара -->
+                <p>{{ .Description }}</p>
+                <form action="/admin/delete-product/{{ .ID }}" method="post">
+                    <button type="submit">Удалить</button> <!-- Кнопка для удаления товара -->
+                </form>
+            </div>
+            {{ end }}
+        </section>
+
+        <h2>Добавить новый мобильный товар</h2>
+        <form action="/admin/add-mobile-product" method="post" enctype="multipart/form-data">
+            <label for="name">Название:</label>
+            <input type="text" id="name" name="name" required><br>
+        
+            <label for="description">Описание:</label>
+            <textarea id="description" name="description" required></textarea><br>
+        
+            <label for="price">Цена:</label>
+            <input type="number" id="price" name="price" step="0.01" required> <!-- Поле для цены --><br>
+        
+            <label for="image">Изображение:</label>
+            <input type="file" id="image" name="image" accept="image/*" required><br>
+        
+            <!-- Дополнительные поля для мобильного товара -->
+            <label for="display">Дисплей:</label>
+            <input type="text" id="display" name="display"><br>
+        
+            <label for="camera">Камера:</label>
+            <input type="text" id="camera" name="camera"><br>
+        
+            <label for="drive">Память:</label>
+            <input type="text" id="drive" name="drive"><br>
+        
+            <label for="color">Цвет:</label>
+            <input type="text" id="color" name="color"><br>
+        
+            <button type="submit">Добавить мобильный товар</button>
+        </form>
+
+        <h2>Существующие мобильные товары</h2>
+        <section id="existing-mobile-products">
+            {{ range .ProductsMobile }}
+            <div class="product">
+                <h3>{{ .Name1 }}</h3>
+                <img src="{{ .ImageURL1 }}" alt="{{ .Name1 }}" style="width: 100px; height: auto;"> <!-- Изображение мобильного товара -->
+                <p>{{ .Description1 }}</p>
+                <form action="/admin/delete-mobile-product/{{ .ID1 }}" method="post">
+                    <button type="submit">Удалить</button> <!-- Кнопка для удаления мобильного товара -->
+                </form>
+            </div>
+            {{ end }}
+        </section>
+
+
+    </main>
+
+</body>
+</html>

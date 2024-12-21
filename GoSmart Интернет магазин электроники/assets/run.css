@@ -1,0 +1,247 @@
+html, body {
+    height: 100%; /* Устанавливаем высоту на 100% */
+    margin: 0; /* Убираем отступы */
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex; /* Используем Flexbox */
+    flex-direction: column; /* Располагаем элементы в колонку */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#logo {
+    background-color: white;
+    width: 200px;
+    margin: 0;
+    display: block;
+}
+
+nav {
+    display: flex; /* Используем Flexbox */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    margin: 0;
+}
+
+nav .but {
+    display: flex; /* Делаем элементы списка в строку */
+    flex-grow: 1; /* Позволяет этому блоку занимать доступное пространство */
+    margin-right: 70px;
+    font-size: 0.9em;
+}
+
+nav ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px; /* Устанавливаем отступы между элементами */
+}
+
+nav ul li a {
+    color: rgb(253, 253, 253); /* Цвет текста кнопок */
+    text-decoration: none;
+}
+
+.fiend{
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 50px;
+}
+
+.but {
+    justify-content: center; /* Центруем элементы навигации */
+    margin: 0;
+}
+
+.korz {
+    display: flex; /* Делаем элементы списка в строку */
+    margin-left: auto; /* Сдвигаем корзину вправо */
+}
+
+#CartWhite{
+    width: 25px; 
+    height: 25px;
+}
+
+#ProfileWhite{
+    width: 25px;
+    height: 25px;
+}
+
+main {
+    flex: 1; /* Позволяет основному контенту занимать доступное пространство */
+    padding: 20px;
+}
+
+.product {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Скругление элементов */
+    margin-bottom: 10px;
+    padding: 15px;
+    margin: 10px; /* Расстояние между элементами */
+    text-align: center;
+    min-width: 100px; /* Минимальная ширина блока при сворачивании */
+
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 5px;
+
+    margin-top: 20px;
+    width: 200px;
+}
+
+.namee{
+    margin: 0;
+}
+
+.price {
+    font-size: 20px; /* Размер шрифта цены */
+    color: #ff0000cf;
+    font-weight: bold; /* Жирность текста */
+}
+
+h3 {
+    font-weight: lighter;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+    color:#9f9f9f; /* Перечеркивание текста */
+}
+
+button:hover {
+    background-color: #218838; /* Цвет кнопки при наведении */
+}
+
+.footer {
+    text-align: center;
+    padding: 1%;
+    background-color: #333;
+    color: white;
+    font-size: xx-small;
+    border-radius: 5px;
+    margin-top: auto; /* Прижимает футер к низу страницы */
+}
+
+#foottext{
+    margin: 0;
+}
+
+/* Скрывает горизонтальный скролл */
+html {
+    overflow-x: hidden; 
+    background-color: w;
+}
+
+
+
+
+
+
+
+form {
+    position: relative;
+    top: 13px;
+    right: 2px;
+    transform: translate(-13px, -50%);
+    transition: all 1s;
+    width: 30px; /* Исходная ширина */
+    height: 30px; /* Исходная высота */
+    box-sizing: border-box;
+    border-radius: 25px; /* Закругленные углы */
+    padding: 5px; /* Отступы внутри формы */
+}
+
+input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 10px); /* Учитываем padding */
+    height: 42.5px; /* Исходная высота */
+    line-height: 30px;
+    outline: none; /* Убираем обводку при фокусе */
+    border: none; /* Убираем обводку */
+    display: none; /* Скрываем input по умолчанию */
+    font-size: 1em;
+    border-radius: 20px; /* Закругленные углы поля ввода */
+    padding: 0 20px; /* Отступы внутри поля ввода */
+    transition: height 0.3s ease; /* Плавный переход для высоты */
+}
+
+
+.fa {
+    box-sizing: border-box;
+    padding: 5px;
+    width: 30px; /* Ширина иконки */
+    height: 30px; /* Высота иконки */
+    
+    position: absolute;
+    top: 0;
+    right: 0; /* Позиционирование иконки */
+    
+    border-radius: 50%; /* Закругленные углы иконки */
+    color: white; /* Цвет иконки */
+    text-align: center;
+    font-size: 1.5em; /* Размер шрифта иконки */
+    font-weight: lighter;
+}
+
+form:hover {
+    width: 200px; /* Ширина при наведении */
+    cursor: pointer; /* Курсор при наведении */
+}
+
+form:hover input {
+    display: block; /* Показываем input при наведении */
+}
+
+form:hover input {
+    height: 30px; /* Уменьшаем высоту input при наведении */
+}
+
+form:hover .fa {
+    background: #333; /* Цвет фона иконки при наведении */
+    color: white; /* Цвет иконки при наведении */
+}
+
+
+
+
+
+
+
+
+
+
+
